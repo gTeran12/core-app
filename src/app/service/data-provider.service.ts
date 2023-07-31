@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PeriodicElement } from '../interface/periodic-element';
+import { Option } from '../interface/option';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,19 @@ export class DataProviderService {
     {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
   ];
 
+  OPTIONS: Option[] = [
+    { value: 'option1', text: 'Option 1'},
+    { value: 'option2', text: 'Option 2'},
+    { value: 'option3', text: 'Option 3'}
+  ]
+
   constructor() { }
 
   getElements() : PeriodicElement[] {
     return this.ELEMENT_DATA;
+  }
+
+  getOptions() : Option[] {
+    return this.OPTIONS;
   }
 }
